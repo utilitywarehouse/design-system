@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { colorsCommon } from '@utilitywarehouse/colour-system';
+import { ThemeProvider } from '@utilitywarehouse/customer-ui-material';
 
 import { Box } from './Box';
 import { BoxProps } from './Box.props';
@@ -11,6 +12,7 @@ import { BoxProps } from './Box.props';
 import { Text } from '../Text';
 
 import { fonts } from '../../tokens';
+import { mediaQueries } from '../../utils';
 
 const meta: Meta<typeof Box> = {
   title: 'Web UI / Layout / Box',
@@ -82,4 +84,72 @@ export const CustomComponent = {
   args: {
     additionalProp: 'I am the additional prop :)',
   },
+};
+
+export const MediaQueries: Story = {
+  render: () => (
+    <Box
+      sx={{
+        background: {
+          mobile: 'red',
+          tablet: 'blue',
+          desktop: 'green',
+          wide: 'yellow',
+        },
+
+        [mediaQueries.only('mobile')]: {
+          color: 'red',
+        },
+
+        [mediaQueries.only('tablet')]: {
+          color: 'blue',
+        },
+
+        [mediaQueries.only('desktop')]: {
+          color: 'green',
+        },
+
+        [mediaQueries.only('wide')]: {
+          color: 'yellow',
+        },
+      }}
+    >
+      This text should not be visible.
+    </Box>
+  ),
+};
+
+export const MediaQueriesWithCwui: Story = {
+  render: () => (
+    <ThemeProvider>
+      <Box
+        sx={{
+          background: {
+            mobile: 'red',
+            tablet: 'blue',
+            desktop: 'green',
+            wide: 'yellow',
+          },
+
+          [mediaQueries.only('mobile')]: {
+            color: 'red',
+          },
+
+          [mediaQueries.only('tablet')]: {
+            color: 'blue',
+          },
+
+          [mediaQueries.only('desktop')]: {
+            color: 'green',
+          },
+
+          [mediaQueries.only('wide')]: {
+            color: 'yellow',
+          },
+        }}
+      >
+        This text should not be visible.
+      </Box>
+    </ThemeProvider>
+  ),
 };

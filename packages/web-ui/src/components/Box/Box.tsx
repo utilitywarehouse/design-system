@@ -10,9 +10,17 @@ import { BoxOwnProps } from './Box.props';
 
 import { createBox } from './createBox';
 
+import { ThemeProvider } from '../ThemeProvider';
+
 import type { Theme } from '../../theme';
 
 const BaseBox = createBox();
+// const InternalBox = createBox();
+// const BaseBox = props => (
+//   <ThemeProvider>
+//     <InternalBox {...props} />
+//   </ThemeProvider>
+// );
 
 /**
  * The `Box` component is a foundational primitive, based on the `div` element. It supports all
