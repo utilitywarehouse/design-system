@@ -1,0 +1,148 @@
+* {
+  /** font-family **/
+  --uwp-body-font-family: 'Work Sans', Arial, sans-serif;
+  /** font-sizes **/
+  --uwp-body-font-size-xs: 0.75rem;
+  --uwp-body-font-size-sm: 0.875rem;
+  --uwp-body-font-size-md: 1rem;
+  --uwp-body-font-size-lg: 1.125rem;
+  --uwp-body-font-size-xl: 1.25rem;
+  /** font-weights **/
+  --uwp-body-font-weight-regular: 400;
+  --uwp-body-font-weight-medium: 500;
+  --uwp-body-font-weight-semibold: 600;
+  /** line-heights **/
+  --uwp-body-line-height-md: 1;
+  --uwp-body-line-height-lg: 1.5;
+  --uwp-body-line-height-xl: 2;
+}
+
+.uwp-BodyText {
+  --uwp-body-text-font-size-subtitle: var(--uwp-body-font-size-lg);
+  --uwp-body-text-font-size-subtitle-desktop: var(--uwp-body-font-size-xl);
+  --uwp-body-text-font-size-body: var(--uwp-body-font-size-md);
+  --uwp-body-text-font-size-legalNote: var(--uwp-body-font-size-sm);
+  --uwp-body-text-font-size-caption: var(--uwp-body-font-size-xs);
+  --uwp-body-text-line-height-subtitle: var(--uwp-body-line-height-lg);
+  --uwp-body-text-line-height-body: var(--uwp-body-line-height-lg);
+  --uwp-body-text-line-height-legalNote: var(--uwp-body-line-height-lg);
+  --uwp-body-text-line-height-caption: var(--uwp-body-line-height-xl);
+
+  font-family: var(--uwp-body-font-family);
+  color: var(--uwp-color, --color-brand-midnight);
+
+  &:where(.uwp-truncate) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /** variants **/
+  &:where(.uwp-variant-body) {
+    font-size: var(--uwp-body-text-font-size-body);
+    line-height: var(--uwp-body-text-line-height-body);
+  }
+  &:where(.uwp-variant-subtitle) {
+    font-size: var(--uwp-body-text-font-size-subtitle);
+    line-height: var(--uwp-body-text-line-height-subtitle);
+    @media (min-width: 992px) {
+      font-size: var(--uwp-body-text-font-size-subtitle-desktop);
+    }
+  }
+  &:where(.uwp-variant-legal-note) {
+    font-size: var(--uwp-body-text-font-size-legal-note);
+    line-height: var(--uwp-body-text-line-height-legal-note);
+  }
+  &:where(.uwp-variant-caption) {
+    font-size: var(--uwp-body-text-font-size-caption);
+    line-height: var(--uwp-body-text-line-height-caption);
+  }
+
+  /** font-weight **/
+  &:where(.uwp-weight-regular) {
+    font-weight: var(--uwp-body-font-weight-regular);
+  }
+  &:where(.uwp-weight-medium) {
+    font-weight: var(--uwp-body-font-weight-medium);
+  }
+  &:where(.uwp-weight-semibold) {
+    font-weight: var(--uwp-body-font-weight-semibold);
+  }
+  @media (min-width: 740px) {
+    &:where(.tablet\:uwp-weight-regular) {
+      font-weight: var(--uwp-body-font-weight-regular);
+    }
+    &:where(.tablet\:uwp-weight-medium) {
+      font-weight: var(--uwp-body-font-weight-medium);
+    }
+    &:where(.tablet\:uwp-weight-semibold) {
+      font-weight: var(--uwp-body-font-weight-semibold);
+    }
+  }
+  @media (min-width: 992px) {
+    &:where(.desktop\:uwp-weight-regular) {
+      font-weight: var(--uwp-body-font-weight-regular);
+    }
+    &:where(.desktop\:uwp-weight-medium) {
+      font-weight: var(--uwp-body-font-weight-medium);
+    }
+    &:where(.desktop\:uwp-weight-semibold) {
+      font-weight: var(--uwp-body-font-weight-semibold);
+    }
+  }
+  @media (min-width: 1200px) {
+    &:where(.wide\:uwp-weight-regular) {
+      font-weight: var(--uwp-body-font-weight-regular);
+    }
+    &:where(.wide\:uwp-weight-medium) {
+      font-weight: var(--uwp-body-font-weight-medium);
+    }
+    &:where(.wide\:uwp-weight-semibold) {
+      font-weight: var(--uwp-body-font-weight-semibold);
+    }
+  }
+
+  /** text-align **/
+  &:where(.uwp-text-align-left) {
+    text-align: left;
+  }
+  &:where(.uwp-text-align-center) {
+    text-align: center;
+  }
+  &:where(.uwp-text-align-right) {
+    text-align: right;
+  }
+  @media (min-width: 740px) {
+    &:where(.tablet\:uwp-text-align-left) {
+      text-align: left;
+    }
+    &:where(.tablet\:uwp-text-align-center) {
+      text-align: center;
+    }
+    &:where(.tablet\:uwp-text-align-right) {
+      text-align: right;
+    }
+  }
+  @media (min-width: 992px) {
+    &:where(.desktop\:uwp-text-align-left) {
+      text-align: left;
+    }
+    &:where(.desktop\:uwp-text-align-center) {
+      text-align: center;
+    }
+    &:where(.desktop\:uwp-text-align-right) {
+      text-align: right;
+    }
+  }
+  @media (min-width: 1200px) {
+    &:where(.wide\:uwp-text-align-left) {
+      text-align: left;
+    }
+    &:where(.wide\:uwp-text-align-center) {
+      text-align: center;
+    }
+    &:where(.wide\:uwp-text-align-right) {
+      text-align: right;
+    }
+  }
+}

@@ -1,14 +1,4 @@
-import * as React from 'react';
-
-import clsx from 'clsx';
-
-import './Box.css';
-import { BoxProps } from './Box.props';
-
-import { Breakpoints, Responsive } from '../../types';
-
-const componentName = 'Box';
-const componentClassName = 'uwp-' + componentName;
+import type { Breakpoints, Responsive } from '../../types';
 
 export const withBreakpoints = (value: Responsive<string> | undefined, prefix = '') => {
   if (typeof value === 'string') {
@@ -42,19 +32,3 @@ export const withBreakpoints = (value: Responsive<string> | undefined, prefix = 
     return { className: classes.join(' '), style: styles };
   }
 };
-
-export const Box = React.forwardRef<React.ElementRef<'div'>, React.PropsWithChildren<BoxProps>>(
-  ({ className, padding, style, ...props }, ref) => {
-    const styleProps = withBreakpoints(padding, 'padding');
-    return (
-      <div
-        ref={ref}
-        className={clsx(componentClassName, styleProps?.className, className)}
-        {...props}
-        style={{ ...styleProps?.style, ...style }}
-      />
-    );
-  }
-);
-
-Box.displayName = componentName;

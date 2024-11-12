@@ -1,0 +1,26 @@
+.uwp-Box {
+  box-sizing: border-box;
+  display: block;
+
+  :where(.uwp-padding) {
+    padding: var(--uwp-padding);
+  }
+
+  @media (min-width: 740px) {
+    :where(.tablet\:uwp-padding) {
+      padding: var(--uwp-padding-tablet);
+    }
+  }
+
+  @media (min-width: 992px) {
+    :where(.desktop\:uwp-padding) {
+      padding: var(--uwp-padding-desktop);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    :where(.wide\:uwp-padding) {
+      padding: var(--uwp-padding-wide);
+    }
+  }
+}
